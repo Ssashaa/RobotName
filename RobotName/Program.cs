@@ -8,7 +8,7 @@ public class Program
         RobotFactory robotFactory = new(robotNameGenerator);
 
         var robots = Enumerable
-            .Range(0, 10000)
+            .Range(0, 10)
             .Select(_ => robotFactory.CreateNewRobot())
             .ToList();
 

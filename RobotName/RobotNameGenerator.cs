@@ -8,11 +8,11 @@ public class RobotNameGenerator
     {
         string NewName()
         {
-            Guid guid = Guid.NewGuid();
-            var letters = guid.ToString().Where(x => Char.IsLetter(x)).Take(2);
-            var numbers = guid.ToString().Where(x => Char.IsDigit(x)).Take(3);
-
-            return String.Join("", letters.Concat(numbers)).ToUpper();
+            string guid = Guid.NewGuid().ToString();
+            return string
+                .Join("", guid.Where(x => Char.IsLetter(x)).Take(2)
+                .Concat(guid.Where(x => Char.IsDigit(x)).Take(3)))
+                .ToUpper();
         }
         while (true)
         {
